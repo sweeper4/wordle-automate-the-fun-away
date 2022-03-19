@@ -7,17 +7,31 @@ fn main() {
     let mut filtered_words = words;
     let guesses = [
         // new_guess('q',2,Status::None),
-        new_guess('w',2,Status::None),
-        new_guess('e',2,Status::None),
-        new_guess('r',2,Status::None),
-        new_guess('t',2,Status::None),
-        new_guess('y',2,Status::None),
-        new_guess('u',2,Status::None),
-        new_guess('i',2,Status::Match),
-        new_guess('o',1,Status::Misplace),
+        // new_guess('w',2,Status::None),
+        new_guess('e',3,Status::None),
+        new_guess('r',3,Status::None),
         new_guess('t',4,Status::None),
-        new_guess('a',2,Status::None),
-        new_guess('s',0,Status::None),
+        // new_guess('y',4,Status::None),
+        new_guess('u',2,Status::None),
+        new_guess('i',3,Status::None),
+        new_guess('o',1,Status::None),
+        // new_guess('p',2,Status::None),
+        new_guess('a',1,Status::None),
+        new_guess('s',4,Status::None),
+        // new_guess('d',2,Status::None),
+        // new_guess('f',0,Status::None),
+        new_guess('g',0,Status::None),
+        new_guess('h',4,Status::None),
+        // new_guess('j',1,Status::None),
+        new_guess('k',4,Status::None),
+        new_guess('l',0,Status::None),
+        // new_guess('z',4,Status::None),
+        // new_guess('x',4,Status::None),
+        new_guess('c',3,Status::None),
+        new_guess('v',3,Status::None),
+        new_guess('b',2,Status::None),
+        new_guess('n',2,Status::None),
+        new_guess('m',0,Status::None),
     ];
     for guess in guesses.iter() {
         filtered_words = filter_words(&guess.letter, &guess.index, &guess.status, &filtered_words);
@@ -73,6 +87,7 @@ fn new_guess(letter:char,index:usize,status:Status) -> Guess {
     }
 }
 
+#[allow(dead_code)]
 enum Status {
     Match,
     Misplace,
